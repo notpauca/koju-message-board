@@ -72,9 +72,11 @@
             username = document.getElementById("nameInput").value;
             console.log(username);
             socket.send(username);
-            document.getElementById("sendMessage").innerText = "Send Message";
-            document.getElementById("messageInput").placeholder = "Message: "
-            document.getElementById("messageInput").disabled = false;
+            document.getElementById("sendMessageButton").innerText = "Send Message";
+            let x = document.getElementById("messageInput");
+            x.placeholder = "Message: "
+            x.disabled = false;
+            x.required = true;
             return;
         }
         let message = document.getElementById("messageInput").value;
@@ -95,9 +97,9 @@
         <form id="messageForm">
             <div class="input-group">
                 <input type="text" id="nameInput" placeholder="Your name" required>
-                <textarea disabled id="messageInput" placeholder="Log in to post messages!" rows="1" required></textarea>
+                <textarea disabled id="messageInput" placeholder="Log in to post messages!" rows="1"></textarea>
             </div>
-            <button type="button" id="sendMessage" onclick="sendMessage()">Login</button>
+            <button type="button" id="sendMessageButton" onclick="sendMessage()">Login</button>
         </form>
     </div>
 </body>
